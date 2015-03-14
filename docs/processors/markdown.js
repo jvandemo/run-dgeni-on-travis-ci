@@ -50,6 +50,7 @@ module.exports = function renderMarkdownProcessor() {
     $runBefore: ['parsing-tags'],
     $process: function(docs) {
       return Q.all(docs.map(function(doc) {
+        console.log('Processing: ' + doc);
         if (doc.docType !== 'markdownFile') {
           return doc;
         }
@@ -99,7 +100,6 @@ function markdownize(str, cb) {
 
 // make a graphviz thing
 function graphvizualize(data, cb) {
-  return;
   var cp = exec('dot -Tsvg');
 
   // buffer stdout
