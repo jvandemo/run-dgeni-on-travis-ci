@@ -50,12 +50,12 @@ module.exports = function renderMarkdownProcessor() {
     $runBefore: ['parsing-tags'],
     $process: function(docs) {
       return Q.all(docs.map(function(doc) {
-        console.log('Processing: ' + getTitle(doc.fileInfo.content));
+        console.log('Processing: ' + doc);
         if (doc.docType !== 'markdownFile') {
           return doc;
         }
         return Q.nfcall(markdownize, doc.fileInfo.content).then(function (rendered) {
-          console.log('Processed: ' + getTitle(doc.fileInfo.content));
+          console.log('Processed: ' + doc);
           return {
             fileInfo: doc.fileInfo,
             name: getTitle(doc.fileInfo.content),
