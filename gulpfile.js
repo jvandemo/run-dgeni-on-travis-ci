@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var Dgeni = require('dgeni');
-require('epipebomb');
+require('epipebomb')();
 
 gulp.task('dgeni', function() {
   try {
