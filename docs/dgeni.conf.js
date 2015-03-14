@@ -11,7 +11,7 @@ var package = new Package('router', [
   require('./traceur-package')
 ]);
 
-// package.processor(require('./processors/markdown.js'));
+package.processor(require('./processors/markdown.js'));
 package.processor(require('./processors/generateIndexPage.js'));
 package.processor(require('./processors/addMethodsToService.js'));
 

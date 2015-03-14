@@ -99,6 +99,7 @@ function markdownize(str, cb) {
 
 // make a graphviz thing
 function graphvizualize(data, cb) {
+  return;
   var cp = exec('dot -Tsvg');
 
   // buffer stdout
