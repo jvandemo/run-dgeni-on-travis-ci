@@ -1,15 +1,11 @@
 language: node_js
-
 node_js:
-  - 0.10
-
+- 0.1
 env:
   global:
-    - secure: FaPs4D9IsIvYSbm4fCXG4SIoB3SXzxWl8E5YhCDbd6q4ty++DxsUrTzdinafgbbMVQSqIhsnjeYPvO6h9JQcWh2enor5OPlFvAZqEw0++wsHfOwkYnO9XoS55isO5dZjw9sm705ymrJDRF8rhyfVzuptWGxZLfTynLR0IzWUUFw=
-
+  - secure: Gwazk816sjMLOz51QTA9ybdlOMCW8EgGpXqXDF1YNkAiCIQiiecx7WVgQIbBnpD9iV4PDGH7wIhmig0f56WI4a4zVPczZN34X38n+59b1JsaUm4w7+eVwc0MrnkzsN2GAwHsoZPzRtqmi+O0gRaP4m23ky0d8qIiNNVI8HqO86Q=
 install:
-  - npm install
-  - npm install -g gulp
-
+- npm install
+- npm install -g gulp
 script:
-  - ./scripts/deploy_docs_to_gh_pages.sh
+- "./scripts/deploy_docs_to_gh_pages.sh"
