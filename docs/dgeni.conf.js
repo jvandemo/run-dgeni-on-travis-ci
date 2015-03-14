@@ -3,8 +3,6 @@ var path = require('canonical-path');
 
 var Package = require('dgeni').Package;
 
-require('epipebomb')();
-
 // Create and export a new Dgeni package called dgeni-example. This package depends upon
 // the jsdoc and nunjucks packages defined in the dgeni-packages npm module.
 var package = new Package('router', [
@@ -13,7 +11,7 @@ var package = new Package('router', [
   require('./traceur-package')
 ]);
 
-package.processor(require('./processors/markdown.js'));
+// package.processor(require('./processors/markdown.js'));
 package.processor(require('./processors/generateIndexPage.js'));
 package.processor(require('./processors/addMethodsToService.js'));
 
@@ -24,7 +22,7 @@ package.factory(require('./file-readers/markdown'));
 package.config(function(log, readFilesProcessor, templateFinder, templateEngine, writeFilesProcessor, markdownFileReader) {
 
   // Set logging level
-  log.level = 'error';
+  log.level = 'info';
 
   // Specify the base path used when resolving relative paths to source and output files
   readFilesProcessor.basePath = path.resolve(__dirname, '..');
