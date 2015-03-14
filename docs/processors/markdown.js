@@ -55,7 +55,7 @@ module.exports = function renderMarkdownProcessor() {
           return doc;
         }
         return Q.nfcall(markdownize, doc.fileInfo.content).then(function (rendered) {
-          console.log('Processed: ' + doc);
+          console.log('Processed successfully: ' + doc);
           return {
             fileInfo: doc.fileInfo,
             name: getTitle(doc.fileInfo.content),
@@ -63,6 +63,8 @@ module.exports = function renderMarkdownProcessor() {
             renderedContent: rendered,
             docType: 'markdown'
           };
+        }, function(){
+          console.log('Processing failed: ' + doc);
         });
       }));
     }
