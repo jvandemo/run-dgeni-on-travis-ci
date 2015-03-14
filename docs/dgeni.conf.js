@@ -22,7 +22,7 @@ package.factory(require('./file-readers/markdown'));
 package.config(function(log, readFilesProcessor, templateFinder, templateEngine, writeFilesProcessor, markdownFileReader) {
 
   // Set logging level
-  log.level = 'info';
+  log.level = 'debug';
 
   // Specify the base path used when resolving relative paths to source and output files
   readFilesProcessor.basePath = path.resolve(__dirname, '..');
