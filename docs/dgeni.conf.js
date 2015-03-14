@@ -3,7 +3,7 @@ var path = require('canonical-path');
 
 var Package = require('dgeni').Package;
 
-require('epipebomb');
+require('epipebomb')();
 
 // Create and export a new Dgeni package called dgeni-example. This package depends upon
 // the jsdoc and nunjucks packages defined in the dgeni-packages npm module.

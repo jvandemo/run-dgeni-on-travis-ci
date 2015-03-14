@@ -7,7 +7,7 @@ var hljs = require('highlight.js');
 hljs.configure({
   classPrefix: ''
 });
-require('epipebomb');
+require('epipebomb')();
 
 // anchors for headings
 var prev = {}; // <- this is a dirty hack
