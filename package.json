@@ -12,6 +12,7 @@
     "url": "https://github.com/angular/router/issues"
   },
   "dependencies": {
+    "canonical-path": "0.0.2",
     "dgeni": "^0.4.1",
     "dgeni-packages": "^0.10.11",
     "gulp": "^3.8.11"
