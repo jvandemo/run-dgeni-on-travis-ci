@@ -63,8 +63,8 @@ module.exports = function renderMarkdownProcessor() {
             renderedContent: rendered,
             docType: 'markdown'
           };
-        }, function(){
-          console.log('Processing failed: ' + doc);
+        }, function(err){
+          console.log('Processing failed: ' + err);
         });
       }));
     }
