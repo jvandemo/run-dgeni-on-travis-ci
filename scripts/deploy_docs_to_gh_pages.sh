@@ -4,7 +4,8 @@ echo "Target: gh-pages branch"
 
 TEMP_DIRECTORY="/tmp/__temp_static_content"
 CURRENT_COMMIT=`git rev-parse HEAD`
-ORIGIN_URL=`git config --get remote.origin.url`
+# ORIGIN_URL=`git config --get remote.origin.url`
+ORIGIN_URL="https://github.com/jvandemo/run-dgeni-on-travis-ci.git"
 ORIGIN_URL_WITH_CREDENTIALS=${ORIGIN_URL/\/\/github.com/\/\/$GITHUB_TOKEN@github.com}
 
 echo "Building new documentation"
