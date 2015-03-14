@@ -85,12 +85,16 @@ function markdownize(str, cb) {
   marked(str, {
     highlight: function (code, lang, callback) {
       if (lang === 'dot') {
+        console.log('dot');
         graphvizualize(code, callback);
       } else if (lang === 'js') {
+        console.log('js');
         return callback(null, eshighlight(code));
       } else if (lang) {
+        console.log('lang');
         return callback(null, hljs.highlight(lang, code).value);
       } else {
+        console.log('nothing');
         return callback(null, code);
       }
     },
@@ -101,6 +105,7 @@ function markdownize(str, cb) {
 
 // make a graphviz thing
 function graphvizualize(data, cb) {
+
   var cp = exec('dot -Tsvg');
 
   // buffer stdout
