@@ -15,6 +15,7 @@
     "canonical-path": "0.0.2",
     "dgeni": "^0.4.1",
     "dgeni-packages": "^0.10.11",
+    "epipebomb": "^0.1.1",
     "eshighlight": "^0.2.2",
     "gulp": "^3.8.11",
     "highlight.js": "^8.4.0",
