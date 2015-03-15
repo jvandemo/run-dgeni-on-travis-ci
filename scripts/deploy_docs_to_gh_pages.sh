@@ -7,11 +7,12 @@ CURRENT_COMMIT=`git rev-parse HEAD`
 # ORIGIN_URL=`git config --get remote.origin.url`
 COMMIT_MESSAGE=`git log --format=%B --no-merges -n 1`
 
-if [ echo "$COMMIT_MESSAGE" | grep '\[build-docs\]' ]; then
-  echo "Building new documentation"
-else
-  echo "No need to rebuild documentation"
-  exit 0
+if echo "$COMMIT_MESSAGE" | grep '\[build-docs\]'
+  then
+    echo "Building new documentation"
+  else
+    echo "No need to rebuild documentation"
+    exit 0
 fi
 
 ORIGIN_URL="https://github.com/jvandemo/run-dgeni-on-travis-ci.git"
