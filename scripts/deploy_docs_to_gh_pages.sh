@@ -7,15 +7,17 @@ CURRENT_COMMIT=`git rev-parse HEAD`
 # ORIGIN_URL=`git config --get remote.origin.url`
 COMMIT_MESSAGE=`git log --format=%B --no-merges -n 1`
 
-if [ !("COMMIT_MESSAGE" | grep "\[build-docs\]") ]; then
+if [ "COMMIT_MESSAGE" | grep "\[build-docs\]" ]; then
+  echo "Building new documentation"
+else
   echo "No need to rebuild documentation"
-  exit 1
+  exit 0
 fi
 
 ORIGIN_URL="https://github.com/jvandemo/run-dgeni-on-travis-ci.git"
 ORIGIN_URL_WITH_CREDENTIALS=${ORIGIN_URL/\/\/github.com/\/\/$GITHUB_TOKEN@github.com}
 
-echo "Building new documentation"
+
 mkdir $TEMP_DIRECTORY || exit 1
 gulp dgeni || exit 1
 cp -r ./dist/docs/* $TEMP_DIRECTORY || exit 1
