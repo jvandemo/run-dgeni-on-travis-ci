@@ -7,6 +7,7 @@ CURRENT_COMMIT=`git rev-parse HEAD`
 # ORIGIN_URL=`git config --get remote.origin.url`
 COMMIT_MESSAGE=`git log --format=%B --no-merges -n 1`
 
+# Check if commit message contains command to build docs
 if echo "$COMMIT_MESSAGE" | grep '\[build-docs\]'
   then
     echo "Building new documentation"
