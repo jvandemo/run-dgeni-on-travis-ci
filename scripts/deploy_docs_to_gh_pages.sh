@@ -8,6 +8,7 @@ CURRENT_COMMIT=`git rev-parse HEAD`
 COMMIT_MESSAGE=`git log --format=%B --no-merges -n 1`
 
 if [ !("COMMIT_MESSAGE" | grep "\[build-docs\]") ]; then
+  echo "No need to rebuild documentation"
   exit 1
 fi
 
